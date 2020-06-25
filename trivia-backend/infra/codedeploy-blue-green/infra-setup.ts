@@ -141,13 +141,13 @@ class TriviaBackendStack extends cdk.Stack {
 
 const app = new cdk.App();
 new TriviaBackendStack(app, 'TriviaBackendTest', {
-  domainName: 'demo-api-test.hsing-hui-demo.richardfan.xyz',
-  domainZone: 'hsing-hui-demo.richardfan.xyz',
+  domainName: 'demo-api-test.richardfan.xyz',
+  domainZone: 'richardfan.xyz',
     env: { account: process.env['CDK_DEFAULT_ACCOUNT'], region: 'us-east-1' }
 });
 new TriviaBackendStack(app, 'TriviaBackendProd', {
-  domainName: 'demo-api.hsing-hui-demo.richardfan.xyz',
-  domainZone: 'hsing-hui-demo.richardfan.xyz',
+  domainName: 'demo-api.richardfan.xyz',
+  domainZone: 'richardfan.xyz',
     env: { account: process.env['CDK_DEFAULT_ACCOUNT'], region: 'us-east-1' }
 });
 app.synth();
