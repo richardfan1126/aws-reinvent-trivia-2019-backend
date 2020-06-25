@@ -18,7 +18,7 @@ class TriviaGameBackendBaseImagePipeline extends cdk.Stack {
         const sourceOutput = new codepipeline.Artifact('SourceArtifact');
         const sourceAction = new actions.GitHubSourceAction({
             actionName: 'GitHubSource',
-            owner: 'SoManyHs',
+            owner: 'richardfan1126',
             repo: 'aws-reinvent-trivia-2019-backend',
             oauthToken: githubAccessToken,
             output: sourceOutput

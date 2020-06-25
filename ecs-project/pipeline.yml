@@ -1,7 +1,7 @@
 # This YAML file defines the relationship and deployment ordering of your environments.
 
 # The name of the pipeline
-name: pipeline-backend-SoManyHs-aws-reinvent-trivia-2019-backend
+name: pipeline-backend-richardfan1126-aws-reinvent-trivia-2019-backend
 
 # The version of the schema used in this template
 version: 1
@@ -16,7 +16,7 @@ source:
   properties:
     access_token_secret: github-token-backend-aws-reinvent-trivia-2019-backend
     branch: master
-    repository: https://github.com/SoManyHs/aws-reinvent-trivia-2019-backend
+    repository: https://github.com/richardfan1126/aws-reinvent-trivia-2019-backend
 
 # The deployment section defines the order the pipeline will deploy
 # to your environments.

@@ -1,6 +1,6 @@
 # Trivia Backend API Service ⚙️
 
-The trivia backend is a REST API that serves questions and answers.  A running example can be seen on [api.reinvent-trivia.com](https://api.reinvent-trivia.com/api/docs/).
+The trivia backend is a REST API that serves questions and answers.  A running example can be seen on [api.richardfan.xyz](https://api.richardfan.xyz/api/docs/).
 
 ## Prep
 
@@ -15,15 +15,15 @@ aws ecr create-repository --region us-east-1 --repository-name reinvent-trivia-b
 Create AWS Certificate Manager certificates for the 'demo-api' and 'demo-api-test' subdomains, then put the unique ARN of those certificates in an AWS Systems Manager Parameter Store parameter.
 
 ```
-aws ssm put-parameter --region us-east-1 --name CertificateArn-demo-api.hsing-hui-demo.reinvent-trivia.com --type String --value arn:aws:acm:...
+aws ssm put-parameter --region us-east-1 --name CertificateArn-demo-api.hsing-hui-demo.richardfan.xyz --type String --value arn:aws:acm:...
 
-aws ssm put-parameter --region us-east-1 --name CertificateArn-demo-api-test.hsing-hui-demo.reinvent-trivia.com --type String --value arn:aws:acm:...
+aws ssm put-parameter --region us-east-1 --name CertificateArn-demo-api-test.hsing-hui-demo.richardfan.xyz --type String --value arn:aws:acm:...
 
 ```
 
 ## Customize
 
-Replace all references to 'reinvent-trivia.com' with your own domain name.
+Replace all references to 'richardfan.xyz' with your own domain name.
 
 # Docker images
 

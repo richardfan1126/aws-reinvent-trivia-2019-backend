@@ -1,6 +1,6 @@
 ## AWS re:Invent 2019 Trivia Game
 
-Sample trivia game built with AWS Fargate.  See [reinvent-trivia.com](https://www.reinvent-trivia.com) for a running example.
+Sample trivia game built with AWS Fargate.  See [richardfan.xyz](https://www.richardfan.xyz) for a running example.
 
 ## Components
 
