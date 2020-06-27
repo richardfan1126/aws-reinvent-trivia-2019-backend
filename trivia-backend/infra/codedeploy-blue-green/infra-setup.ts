@@ -23,7 +23,7 @@ class TriviaBackendStack extends cdk.Stack {
 
     // Lookup pre-existing TLS certificate
     const certificateArn = StringParameter.fromStringParameterAttributes(this, 'CertArnParameter', {
-      parameterName: 'CertificateArnNew-' + props.domainName
+      parameterName: 'CertificateArn-' + props.domainName
     }).stringValue;
 
     // Load balancer
