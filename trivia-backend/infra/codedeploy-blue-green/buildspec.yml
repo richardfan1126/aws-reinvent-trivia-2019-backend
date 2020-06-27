@@ -40,7 +40,7 @@ phases:
       - cd infra/codedeploy-blue-green
       - mkdir build
       - npm ci
-      - node produce-config.js -g test -s TriviaBackendTest -h TriviaBackendHooksTest
+      # - node produce-config.js -g test -s TriviaBackendTest -h TriviaBackendHooksTest
       - node produce-config.js -g prod -s TriviaBackendProd -h TriviaBackendHooksProd
 
 artifacts:
@@ -48,8 +48,8 @@ artifacts:
     BuildArtifact:
       files:
         - trivia-backend/infra/codedeploy-blue-green/build/appspec-prod.json
-        - trivia-backend/infra/codedeploy-blue-green/build/appspec-test.json
-        - trivia-backend/infra/codedeploy-blue-green/build/task-definition-test.json
+        # - trivia-backend/infra/codedeploy-blue-green/build/appspec-test.json
+        # - trivia-backend/infra/codedeploy-blue-green/build/task-definition-test.json
         - trivia-backend/infra/codedeploy-blue-green/build/task-definition-prod.json
       discard-paths: yes
     ImageDetails:

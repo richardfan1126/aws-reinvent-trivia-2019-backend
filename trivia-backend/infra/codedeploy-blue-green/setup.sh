@@ -6,7 +6,7 @@ set -ex
 
 npm install
 
-npm run deploy-test-infra
+# npm run deploy-test-infra
 
 npm run deploy-prod-infra
 
@@ -19,7 +19,7 @@ npm install
 
 aws cloudformation package --template-file template.yaml --s3-bucket $1 --output-template-file packaged-template.yaml
 
-aws cloudformation deploy --region us-east-1 --template-file packaged-template.yaml --stack-name TriviaBackendHooksTest --capabilities CAPABILITY_IAM --parameter-overrides TriviaBackendDomain=demo-api-test.richardfan.xyz
+# aws cloudformation deploy --region us-east-1 --template-file packaged-template.yaml --stack-name TriviaBackendHooksTest --capabilities CAPABILITY_IAM --parameter-overrides TriviaBackendDomain=demo-api-test.richardfan.xyz
 
 aws cloudformation deploy --region us-east-1 --template-file packaged-template.yaml --stack-name TriviaBackendHooksProd --capabilities CAPABILITY_IAM --parameter-overrides TriviaBackendDomain=demo-api.richardfan.xyz
 
@@ -31,7 +31,7 @@ mkdir -p build
 
 export AWS_REGION=us-east-1
 
-node produce-config.js -g test -s TriviaBackendTest -h TriviaBackendHooksTest
+# node produce-config.js -g test -s TriviaBackendTest -h TriviaBackendHooksTest
 
 node produce-config.js -g prod -s TriviaBackendProd -h TriviaBackendHooksProd
 
@@ -43,9 +43,9 @@ sed -i.bak "s|<PLACEHOLDER>|$ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/reinvent
 
 aws ecs create-cluster --region us-east-1 --cluster-name default
 
-aws ecs register-task-definition --region us-east-1 --cli-input-json file://build/task-definition-test.json
+# aws ecs register-task-definition --region us-east-1 --cli-input-json file://build/task-definition-test.json
 
-aws ecs create-service --region us-east-1 --service-name trivia-demo-backend-test --cli-input-json file://build/service-definition-test.json
+# aws ecs create-service --region us-east-1 --service-name trivia-demo-backend-test --cli-input-json file://build/service-definition-test.json
 
 aws ecs register-task-definition --region us-east-1 --cli-input-json file://build/task-definition-prod.json
 
@@ -53,16 +53,16 @@ aws ecs create-service --region us-east-1 --service-name trivia-demo-backend-pro
 
 # Create CodeDeploy resources
 
-aws deploy create-application --region us-east-1 --application-name AppECS-default-trivia-demo-backend-test --compute-platform ECS
+# aws deploy create-application --region us-east-1 --application-name AppECS-default-trivia-demo-backend-test --compute-platform ECS
 
 aws deploy create-application --region us-east-1 --application-name AppECS-default-trivia-demo-backend-prod --compute-platform ECS
 
-aws deploy create-deployment-group --region us-east-1 --deployment-group-name DgpECS-default-trivia-demo-backend-test --cli-input-json file://build/deployment-group-test.json
+# aws deploy create-deployment-group --region us-east-1 --deployment-group-name DgpECS-default-trivia-demo-backend-test --cli-input-json file://build/deployment-group-test.json
 
 aws deploy create-deployment-group --region us-east-1 --deployment-group-name DgpECS-default-trivia-demo-backend-prod --cli-input-json file://build/deployment-group-prod.json
 
 # Start deployment
 
-aws ecs deploy --region us-east-1 --service trivia-demo-backend-test --task-definition build/task-definition-test.json --codedeploy-appspec build/appspec-test.json
+# aws ecs deploy --region us-east-1 --service trivia-demo-backend-test --task-definition build/task-definition-test.json --codedeploy-appspec build/appspec-test.json
 
-aws ecs deploy --region us-east-1 --service trivia-demo-backend-prod --task-definition build/task-definition-prod.json --codedeploy-appspec build/appspec-prod.json
+# aws ecs deploy --region us-east-1 --service trivia-demo-backend-prod --task-definition build/task-definition-prod.json --codedeploy-appspec build/appspec-prod.json
