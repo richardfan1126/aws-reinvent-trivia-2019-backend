@@ -39,7 +39,7 @@ const router = express.Router();
  */
 router.get('/all', function(req, res, next) {
   // res.send(questions);
-  res.send("");
+  res.send('[{"category":"KnowYourHistory","questions":[]},{"category":"TheMainEvent","questions":[]},{"category":"Let\'sGetMusical","questions":[]},{"category":"People,Places,andThings","questions":[]}]');
 });
 
 /**
