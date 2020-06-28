@@ -18,6 +18,7 @@
             "terminationWaitTimeInMinutes": 5
         }
     },
+    "deploymentConfigName": "CodeDeployDefault.ECSCanary10Percent5Minutes",
     "deploymentStyle": {
         "deploymentOption": "WITH_TRAFFIC_CONTROL",
         "deploymentType": "BLUE_GREEN"
