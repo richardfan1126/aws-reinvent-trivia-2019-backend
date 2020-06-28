@@ -38,7 +38,8 @@ const router = express.Router();
  *     curl -i https://api.richardfan.xyz/api/trivia/all
  */
 router.get('/all', function(req, res, next) {
-  res.send(questions);
+  // res.send(questions);
+  res.send("");
 });
 
 /**
